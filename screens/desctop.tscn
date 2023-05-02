@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkj5d1xo4ksip"]
+
+[ext_resource type="Script" path="res://screens/desctop.gd" id="1_i8o14"]
+[ext_resource type="Texture2D" uid="uid://uitbs6itgdx1" path="res://res/Desctop/StartButton.png" id="1_np3jm"]
+[ext_resource type="Texture2D" uid="uid://bmr4u6vg8p1xk" path="res://res/Wallpepers/Wallpeper.png" id="2_sw2dk"]
+[ext_resource type="PackedScene" uid="uid://dsehldo8lc3cc" path="res://screens/StartMenu.tscn" id="3_l53ff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bysmx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j80qd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0m4y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l7w4g"]
+
+[node name="Desctop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i8o14")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.466667, 0.129412, 0.435294, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_sw2dk")
+
+[node name="DesctopField" type="ItemList" parent="."]
+texture_filter = 1
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.951389
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bysmx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j80qd")
+max_columns = 11
+fixed_column_width = 100
+icon_mode = 0
+fixed_icon_size = Vector2i(75, 75)
+metadata/_edit_use_anchors_ = true
+
+[node name="TaskBar" type="ItemList" parent="."]
+visibility_layer = 3
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.951389
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m0m4y")
+theme_override_styles/selected_focus = SubResource("StyleBoxEmpty_l7w4g")
+item_count = 1
+max_columns = 2
+fixed_icon_size = Vector2i(25, 25)
+item_0/text = "start"
+item_0/icon = ExtResource("1_np3jm")
+metadata/_edit_use_anchors_ = true
+
+[node name="StartMenu" parent="." instance=ExtResource("3_l53ff")]
+layout_mode = 1
+offset_top = -35.0
+offset_bottom = -35.0
+
+[connection signal="empty_clicked" from="DesctopField" to="." method="_on_desctop_field_empty_clicked"]
+[connection signal="item_clicked" from="DesctopField" to="." method="_on_desctop_field_item_clicked"]
+[connection signal="empty_clicked" from="TaskBar" to="." method="_on_task_bar_empty_clicked"]
+[connection signal="item_clicked" from="TaskBar" to="." method="_on_task_bar_item_clicked"]
+[connection signal="item_selected" from="TaskBar" to="." method="_on_task_bar_item_selected"]

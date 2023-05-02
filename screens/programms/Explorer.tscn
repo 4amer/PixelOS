@@ -1,0 +1,196 @@
+[gd_scene load_steps=16 format=3 uid="uid://byws200mkph34"]
+
+[ext_resource type="Texture2D" uid="uid://bwi4c2adtjnsn" path="res://res/Explorer/HomeIcon-export.png" id="1_3bmdn"]
+[ext_resource type="Script" path="res://screens/programms/Explorer.gd" id="1_loyv5"]
+[ext_resource type="Texture2D" uid="uid://bo8bpwdmqvbxt" path="res://res/Explorer/DocumentsIcon-export.png" id="2_hlx3f"]
+[ext_resource type="Texture2D" uid="uid://3fr2v4mm3vwv" path="res://res/Explorer/DownloadsIcon-export.png" id="3_skex1"]
+[ext_resource type="Texture2D" uid="uid://6auanjo2sd04" path="res://res/Explorer/MusicIcon-export.png" id="4_sj86m"]
+[ext_resource type="Texture2D" uid="uid://cvp1p78bxtygs" path="res://res/Explorer/PicturesIcon-export.png" id="5_avnbu"]
+[ext_resource type="Texture2D" uid="uid://ccpun55817qy7" path="res://res/Explorer/VideosIcon.png" id="6_lyk5w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7usg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_right = 1
+border_color = Color(0.682353, 0.682353, 0.682353, 1)
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bwtg2"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.87451, 0.87451, 0.87451, 1)
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lmhbf"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.403922, 0.403922, 0.403922, 1)
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_boghp"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.403922, 0.403922, 0.403922, 1)
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mrp23"]
+bg_color = Color(0.87451, 0.87451, 0.87451, 1)
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.682353, 0.682353, 0.682353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpb50"]
+bg_color = Color(0.87451, 0.87451, 0.87451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.682353, 0.682353, 0.682353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_126ks"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.682353, 0.682353, 0.682353, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_842ek"]
+
+[node name="Explorer" type="Node"]
+
+[node name="Explorer" type="Window" parent="."]
+position = Vector2i(60, 80)
+size = Vector2i(1160, 600)
+min_size = Vector2i(400, 300)
+max_size = Vector2i(1280, 720)
+script = ExtResource("1_loyv5")
+
+[node name="ColorRect" type="ColorRect" parent="Explorer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.87451, 0.87451, 0.87451, 1)
+
+[node name="UI" type="HBoxContainer" parent="Explorer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tabs" type="PanelContainer" parent="Explorer/UI"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y7usg")
+
+[node name="Buttons" type="VBoxContainer" parent="Explorer/UI/Tabs"]
+layout_mode = 2
+
+[node name="Home" type="Button" parent="Explorer/UI/Tabs/Buttons"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bwtg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmhbf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_boghp")
+text = "Home"
+icon = ExtResource("1_3bmdn")
+alignment = 0
+
+[node name="Documents" type="Button" parent="Explorer/UI/Tabs/Buttons"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bwtg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmhbf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_boghp")
+text = "Documents"
+icon = ExtResource("2_hlx3f")
+alignment = 0
+
+[node name="Downloads" type="Button" parent="Explorer/UI/Tabs/Buttons"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bwtg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmhbf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_boghp")
+text = "Downloads"
+icon = ExtResource("3_skex1")
+alignment = 0
+
+[node name="Music" type="Button" parent="Explorer/UI/Tabs/Buttons"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bwtg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmhbf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_boghp")
+text = "Music"
+icon = ExtResource("4_sj86m")
+alignment = 0
+
+[node name="Pictures" type="Button" parent="Explorer/UI/Tabs/Buttons"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bwtg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmhbf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_boghp")
+text = "Pictures"
+icon = ExtResource("5_avnbu")
+alignment = 0
+
+[node name="Videos" type="Button" parent="Explorer/UI/Tabs/Buttons"]
+texture_filter = 1
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_bwtg2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lmhbf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_boghp")
+text = "Videos"
+icon = ExtResource("6_lyk5w")
+alignment = 0
+
+[node name="Content" type="VBoxContainer" parent="Explorer/UI"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Search" type="LineEdit" parent="Explorer/UI/Content"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_mrp23")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hpb50")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_126ks")
+
+[node name="Items" type="ItemList" parent="Explorer/UI/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_842ek")
+max_columns = 10
+same_column_width = true
+fixed_column_width = 300
+fixed_icon_size = Vector2i(100, 100)
+
+[connection signal="close_requested" from="Explorer" to="Explorer" method="_on_close_requested"]
+[connection signal="button_down" from="Explorer/UI/Tabs/Buttons/Home" to="Explorer" method="_on_home_button_down"]
+[connection signal="button_down" from="Explorer/UI/Tabs/Buttons/Documents" to="Explorer" method="_on_documents_button_down"]
+[connection signal="button_down" from="Explorer/UI/Tabs/Buttons/Downloads" to="Explorer" method="_on_downloads_button_down"]
+[connection signal="button_down" from="Explorer/UI/Tabs/Buttons/Music" to="Explorer" method="_on_music_button_down"]
+[connection signal="button_down" from="Explorer/UI/Tabs/Buttons/Pictures" to="Explorer" method="_on_pictures_button_down"]
+[connection signal="button_down" from="Explorer/UI/Tabs/Buttons/Videos" to="Explorer" method="_on_videos_button_down"]
