@@ -213,7 +213,7 @@ offset_bottom = 219.0
 grow_vertical = 2
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_681wo")
-text = "Настройки"
+text = "Settings"
 icon = ExtResource("1_l2p6g")
 alignment = 0
 
@@ -226,7 +226,7 @@ offset_bottom = 268.0
 grow_vertical = 2
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ohj30")
-text = "Выключить"
+text = "Turn off"
 icon = ExtResource("2_iqsgd")
 alignment = 0
 
@@ -235,4 +235,5 @@ libraries = {
 "": SubResource("AnimationLibrary_b5lyf")
 }
 
+[connection signal="button_down" from="Panel/Settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="Panel/Exit" to="." method="_on_exit_button_down"]

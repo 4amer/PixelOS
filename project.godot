@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="TestOs"
+run/main_scene="res://screens/LoadSys.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Main="*res://Main.gd"
 
 [display]
 

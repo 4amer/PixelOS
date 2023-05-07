@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkj5d1xo4ksip"]
+[gd_scene load_steps=13 format=3 uid="uid://bkj5d1xo4ksip"]
 
 [ext_resource type="Script" path="res://screens/desctop.gd" id="1_i8o14"]
 [ext_resource type="Texture2D" uid="uid://uitbs6itgdx1" path="res://res/Desctop/StartButton.png" id="1_np3jm"]
 [ext_resource type="Texture2D" uid="uid://bmr4u6vg8p1xk" path="res://res/Wallpepers/Wallpeper.png" id="2_sw2dk"]
 [ext_resource type="PackedScene" uid="uid://dsehldo8lc3cc" path="res://screens/StartMenu.tscn" id="3_l53ff"]
+[ext_resource type="Texture2D" uid="uid://bjgxiww38b2nm" path="res://res/LoadSys/LoadIcon.png" id="5_q7bi2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bysmx"]
 
@@ -12,6 +13,91 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m0m4y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l7w4g"]
+
+[sub_resource type="Animation" id="Animation_sh6gx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0862745, 0.0862745, 0.0862745, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_qp5ui"]
+resource_name = "enter"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0862745, 0.0862745, 0.0862745, 1), Color(0.0862745, 0.0862745, 0.0862745, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_emilo"]
+_data = {
+"RESET": SubResource("Animation_sh6gx"),
+"enter": SubResource("Animation_qp5ui")
+}
 
 [node name="Desctop" type="Control"]
 layout_mode = 3
@@ -83,8 +169,66 @@ layout_mode = 1
 offset_top = -35.0
 offset_bottom = -35.0
 
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+texture_filter = 1
+custom_minimum_size = Vector2(136, 170)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -160.0
+offset_right = 65.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_q7bi2")
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 67.0
+offset_right = 20.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("1_np3jm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+autoplay = "enter"
+libraries = {
+"": SubResource("AnimationLibrary_emilo")
+}
+
 [connection signal="empty_clicked" from="DesctopField" to="." method="_on_desctop_field_empty_clicked"]
 [connection signal="item_clicked" from="DesctopField" to="." method="_on_desctop_field_item_clicked"]
 [connection signal="empty_clicked" from="TaskBar" to="." method="_on_task_bar_empty_clicked"]
 [connection signal="item_clicked" from="TaskBar" to="." method="_on_task_bar_item_clicked"]
 [connection signal="item_selected" from="TaskBar" to="." method="_on_task_bar_item_selected"]
+[connection signal="animation_finished" from="Control/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

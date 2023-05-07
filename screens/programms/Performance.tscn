@@ -1,0 +1,248 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt1kyqwxyutia"]
+
+[ext_resource type="Script" path="res://screens/programms/Performance.gd" id="1_62qh5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q4gq3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aymvq"]
+bg_color = Color(0.172549, 0, 0.117647, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2auli"]
+bg_color = Color(0.466667, 0.129412, 0.435294, 1)
+
+[node name="Control" type="Node"]
+script = ExtResource("1_62qh5")
+
+[node name="Window" type="Window" parent="."]
+title = "Performance"
+position = Vector2i(20, 40)
+size = Vector2i(310, 200)
+min_size = Vector2i(310, 200)
+max_size = Vector2i(310, 200)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.87451, 0.87451, 0.87451, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CPUProgressBar" type="Panel" parent="Window/HBoxContainer"]
+custom_minimum_size = Vector2(75, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q4gq3")
+
+[node name="GHz" type="Label" parent="Window/HBoxContainer/CPUProgressBar"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -26.0
+offset_right = 37.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "2,07Ghz"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Window/HBoxContainer/CPUProgressBar"]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -75.0
+offset_right = 25.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_aymvq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2auli")
+value = 4.0
+fill_mode = 3
+
+[node name="CPU" type="Label" parent="Window/HBoxContainer/CPUProgressBar"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CPU"
+horizontal_alignment = 1
+
+[node name="MemoryProgressBar" type="Panel" parent="Window/HBoxContainer"]
+custom_minimum_size = Vector2(75, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q4gq3")
+
+[node name="Gb" type="Label" parent="Window/HBoxContainer/MemoryProgressBar"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -26.0
+offset_right = 37.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "4,6/8,0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Window/HBoxContainer/MemoryProgressBar"]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -75.0
+offset_right = 25.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_aymvq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2auli")
+value = 4.0
+fill_mode = 3
+
+[node name="Memory" type="Label" parent="Window/HBoxContainer/MemoryProgressBar"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Memory"
+horizontal_alignment = 1
+
+[node name="DiskProgressBar" type="Panel" parent="Window/HBoxContainer"]
+custom_minimum_size = Vector2(75, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q4gq3")
+
+[node name="ProgressBar" type="ProgressBar" parent="Window/HBoxContainer/DiskProgressBar"]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -75.0
+offset_right = 25.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_aymvq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2auli")
+value = 4.0
+fill_mode = 3
+
+[node name="DiskC" type="Label" parent="Window/HBoxContainer/DiskProgressBar"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Disk C:"
+horizontal_alignment = 1
+
+[node name="HDD" type="Label" parent="Window/HBoxContainer/DiskProgressBar"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -26.0
+offset_right = 37.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HDD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GPUProgressBar" type="Panel" parent="Window/HBoxContainer"]
+custom_minimum_size = Vector2(75, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_q4gq3")
+
+[node name="ProgressBar" type="ProgressBar" parent="Window/HBoxContainer/GPUProgressBar"]
+custom_minimum_size = Vector2(50, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -75.0
+offset_right = 25.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_aymvq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2auli")
+value = 4.0
+fill_mode = 3
+
+[node name="GPU" type="Label" parent="Window/HBoxContainer/GPUProgressBar"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "GPU"
+horizontal_alignment = 1
+
+[node name="Temperature" type="Label" parent="Window/HBoxContainer/GPUProgressBar"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -37.5
+offset_top = -26.0
+offset_right = 37.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "45C°"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpdatePerformance" type="Timer" parent="Window"]
+wait_time = 0.25
+autostart = true
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
+[connection signal="timeout" from="Window/UpdatePerformance" to="." method="_on_update_performance_timeout"]

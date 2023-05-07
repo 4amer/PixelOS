@@ -1,6 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbtth7tqmiv3e"]
+[gd_scene load_steps=7 format=3 uid="uid://cbtth7tqmiv3e"]
 
+[ext_resource type="Script" path="res://screens/LoadSys.gd" id="1_6b5fv"]
 [ext_resource type="Texture2D" uid="uid://bjgxiww38b2nm" path="res://res/LoadSys/LoadIcon.png" id="1_t7rgg"]
+[ext_resource type="Texture2D" uid="uid://uitbs6itgdx1" path="res://res/Desctop/StartButton.png" id="3_mpxjl"]
+
+[sub_resource type="Animation" id="Animation_0lwwl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_x8ys5"]
+resource_name = "start"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rppjh"]
+_data = {
+"RESET": SubResource("Animation_0lwwl"),
+"start": SubResource("Animation_x8ys5")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +48,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6b5fv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -35,3 +75,28 @@ offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_t7rgg")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 67.0
+offset_right = 20.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("3_mpxjl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start"
+libraries = {
+"": SubResource("AnimationLibrary_rppjh")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
