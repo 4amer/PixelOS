@@ -1,0 +1,236 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3uip3rwfckpt"]
+
+[ext_resource type="Texture2D" uid="uid://c1e2ooaa0el3b" path="res://res/WannaCry/red-lock.webp" id="1_e3qj0"]
+[ext_resource type="Script" path="res://screens/programms/WannaCry.gd" id="1_olojr"]
+[ext_resource type="Texture2D" uid="uid://gngq85hp5l4j" path="res://res/WannaCry/bitcoin-logo-button-free-vector.jpg" id="3_k15vj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi7hc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c7hp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+expand_margin_top = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogfiu"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wtghx"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_uvou1"]
+properties/0/path = NodePath("Window:visible")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath("Window:position")
+properties/1/spawn = true
+properties/1/sync = true
+properties/2/path = NodePath("Window:size")
+properties/2/spawn = true
+properties/2/sync = true
+
+[node name="Node" type="Node"]
+script = ExtResource("1_olojr")
+
+[node name="Window" type="Window" parent="."]
+title = "Wana Decrypt0r 2.0"
+position = Vector2i(290, 110)
+size = Vector2i(700, 500)
+min_size = Vector2i(700, 500)
+max_size = Vector2i(700, 500)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.482353, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Window/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("1_e3qj0")
+expand_mode = 1
+
+[node name="PayLeft" type="Panel" parent="Window/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wi7hc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/HBoxContainer/VBoxContainer/PayLeft"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -67.5
+offset_right = 125.0
+offset_bottom = 67.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Window/HBoxContainer/VBoxContainer/PayLeft/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "Payment will be raised on"
+horizontal_alignment = 1
+
+[node name="date" type="Label" parent="Window/HBoxContainer/VBoxContainer/PayLeft/VBoxContainer"]
+layout_mode = 2
+text = "date
+"
+horizontal_alignment = 1
+
+[node name="lable" type="Label" parent="Window/HBoxContainer/VBoxContainer/PayLeft/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5c7hp")
+text = "Time left"
+horizontal_alignment = 1
+
+[node name="Timer" type="Label" parent="Window/HBoxContainer/VBoxContainer/PayLeft/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Time"
+horizontal_alignment = 1
+
+[node name="FirstFile" type="Panel" parent="Window/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wi7hc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/HBoxContainer/VBoxContainer/FirstFile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -67.5
+offset_right = 125.0
+offset_bottom = 67.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Window/HBoxContainer/VBoxContainer/FirstFile/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "Your files will be lost on"
+horizontal_alignment = 1
+
+[node name="date" type="Label" parent="Window/HBoxContainer/VBoxContainer/FirstFile/VBoxContainer"]
+layout_mode = 2
+text = "date"
+horizontal_alignment = 1
+
+[node name="lable" type="Label" parent="Window/HBoxContainer/VBoxContainer/FirstFile/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_5c7hp")
+text = "Time left"
+horizontal_alignment = 1
+
+[node name="Timer" type="Label" parent="Window/HBoxContainer/VBoxContainer/FirstFile/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Time"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Window/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Window/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "
+Ooops, your files have been encrypted!
+
+"
+
+[node name="Panel" type="Panel" parent="Window/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ogfiu")
+
+[node name="Label" type="Label" parent="Window/HBoxContainer/VBoxContainer2/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Ooops, your important files are encrypted.
+If you see this text, then your files are no longer
+ accessible, because they have been encrypted.
+Perhaps you are busy looking for a way to recover 
+your files, but don’t waste your time. Nobody can 
+recover your files without our decryption service.
+We guarantee that you can recover all your files 
+safely and easily. All you need to do is submit the 
+payment and purchase the decryption key.
+Please follow the instructions:
+"
+
+[node name="Panel2" type="Panel" parent="Window/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wtghx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window/HBoxContainer/VBoxContainer2/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Window/HBoxContainer/VBoxContainer2/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_k15vj")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/HBoxContainer/VBoxContainer2/Panel2/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Window/HBoxContainer/VBoxContainer2/Panel2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Send $300 worth of bitcoin on this address:"
+
+[node name="Label2" type="Label" parent="Window/HBoxContainer/VBoxContainer2/Panel2/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Djl783JHkjhfbnLAKjd:Ljifaldkj890"
+
+[node name="Timer" type="Timer" parent="Window"]
+autostart = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_uvou1")
+
+[connection signal="timeout" from="Window/Timer" to="." method="_on_timer_timeout"]

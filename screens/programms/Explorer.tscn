@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://byws200mkph34"]
+[gd_scene load_steps=17 format=3 uid="uid://byws200mkph34"]
 
 [ext_resource type="Texture2D" uid="uid://bwi4c2adtjnsn" path="res://res/Explorer/HomeIcon-export.png" id="1_3bmdn"]
 [ext_resource type="Script" path="res://screens/programms/Explorer.gd" id="1_loyv5"]
@@ -55,6 +55,38 @@ border_width_bottom = 1
 border_color = Color(0.682353, 0.682353, 0.682353, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_842ek"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hofly"]
+properties/0/path = NodePath("Explorer:position")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath("Explorer:size")
+properties/1/spawn = true
+properties/1/sync = true
+properties/2/path = NodePath("Explorer:visible")
+properties/2/spawn = true
+properties/2/sync = true
+properties/3/path = NodePath("Explorer/UI/Content/Search:text")
+properties/3/spawn = true
+properties/3/sync = true
+properties/4/path = NodePath("Explorer/UI/Tabs/Buttons/Home:button_pressed")
+properties/4/spawn = true
+properties/4/sync = true
+properties/5/path = NodePath("Explorer/UI/Tabs/Buttons/Documents:button_pressed")
+properties/5/spawn = true
+properties/5/sync = true
+properties/6/path = NodePath("Explorer/UI/Tabs/Buttons/Downloads:button_pressed")
+properties/6/spawn = true
+properties/6/sync = true
+properties/7/path = NodePath("Explorer/UI/Tabs/Buttons/Music:button_pressed")
+properties/7/spawn = true
+properties/7/sync = true
+properties/8/path = NodePath("Explorer/UI/Tabs/Buttons/Pictures:button_pressed")
+properties/8/spawn = true
+properties/8/sync = true
+properties/9/path = NodePath("Explorer/UI/Tabs/Buttons/Videos:button_pressed")
+properties/9/spawn = true
+properties/9/sync = true
 
 [node name="Explorer" type="Node"]
 
@@ -186,6 +218,9 @@ max_columns = 10
 same_column_width = true
 fixed_column_width = 300
 fixed_icon_size = Vector2i(100, 100)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_hofly")
 
 [connection signal="close_requested" from="Explorer" to="Explorer" method="_on_close_requested"]
 [connection signal="button_down" from="Explorer/UI/Tabs/Buttons/Home" to="Explorer" method="_on_home_button_down"]

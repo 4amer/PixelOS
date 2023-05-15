@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://4ogmdcqmw7pu"]
+
+[ext_resource type="Script" path="res://screens/programms/notepad.gd" id="1_cfebv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f57hx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vdma8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_brg2w"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2l4ie"]
+properties/0/path = NodePath("Window:visible")
+properties/0/spawn = true
+properties/0/sync = true
+properties/1/path = NodePath("Window:position")
+properties/1/spawn = true
+properties/1/sync = true
+properties/2/path = NodePath("Window:size")
+properties/2/spawn = true
+properties/2/sync = true
+
+[node name="Node" type="Node"]
+script = ExtResource("1_cfebv")
+
+[node name="Window" type="Window" parent="."]
+title = "NotePad"
+position = Vector2i(20, 40)
+min_size = Vector2i(100, 100)
+max_size = Vector2i(500, 500)
+
+[node name="ColorRect" type="ColorRect" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Window"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f57hx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vdma8")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_brg2w")
+text = "asdfasdfasdf"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_2l4ie")
+
+[connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]

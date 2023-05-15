@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://csrargnyymbg4"]
+
+[ext_resource type="Script" path="res://clients/client.gd" id="1_vto6r"]
+
+[node name="Client" type="Node2D"]
+script = ExtResource("1_vto6r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

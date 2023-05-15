@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ctud5j3264nrw"]
+
+[node name="Node" type="Node"]
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = "Error!"
+position = Vector2i(490, 310)
+size = Vector2i(300, 100)
+visible = true
+min_size = Vector2i(300, 100)
+max_size = Vector2i(300, 100)
+dialog_text = "Failed to open file!"
