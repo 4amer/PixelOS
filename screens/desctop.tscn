@@ -100,21 +100,6 @@ _data = {
 }
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wtinn"]
-properties/0/path = NodePath(".")
-properties/0/spawn = true
-properties/0/sync = true
-properties/1/path = NodePath("DesctopField:select_mode")
-properties/1/spawn = true
-properties/1/sync = true
-properties/2/path = NodePath("DesctopField:allow_reselect")
-properties/2/spawn = true
-properties/2/sync = true
-properties/3/path = NodePath("DesctopField:allow_rmb_select")
-properties/3/spawn = true
-properties/3/sync = true
-properties/4/path = NodePath("DesctopField:fixed_icon_size")
-properties/4/spawn = true
-properties/4/sync = true
 
 [node name="Desctop" type="Control"]
 layout_mode = 3

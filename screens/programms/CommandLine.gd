@@ -1,5 +1,6 @@
 extends Node
 
+@onready var audio = $"../ispanschi"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +18,9 @@ func _on_line_edit_text_submitted(new_text):
 		$Label.text = $Label.text + "\n" + "apt is not installed. Please install apt with 'sudo apt install apt'"
 	elif new_text == "help":
 		$Label.text = $Label.text + "\n" + "Help yourself!"
+	elif new_text == "ispantschi":
+		audio.play()
+		$Label.text = $Label.text + "\n" + "ispantschi"
 	else:
 		$Label.text = $Label.text + "\n" + "Command '" + new_text + "' is not found"
 

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://blpnr0jaul8eg"]
+
+[node name="Node" type="Node"]
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+title = "SuSpersky"
+position = Vector2i(480, 298)
+size = Vector2i(319, 135)
+visible = true
+dialog_text = "Antivirus interrupted lounch
+of the program. This program contains
+a virus!"

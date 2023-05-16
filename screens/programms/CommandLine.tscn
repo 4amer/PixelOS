@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl807tqg2lsxq"]
+[gd_scene load_steps=6 format=3 uid="uid://bl807tqg2lsxq"]
 
 [ext_resource type="Script" path="res://screens/programms/CommandLine.gd" id="1_t45b4"]
+[ext_resource type="AudioStream" uid="uid://tbpdorg8ockr" path="res://screens/programms/CommandLineRofls/mp3cut_nrPybzf.mp3" id="2_6bva8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j1m8d"]
 
@@ -57,6 +58,9 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_j1m8d")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_v4rte")
+
+[node name="ispanschi" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6bva8")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_wy16w")

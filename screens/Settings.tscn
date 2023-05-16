@@ -15,13 +15,13 @@ properties/2/sync = true
 properties/3/path = NodePath("Window/VBoxContainer/Miner/Miner:button_pressed")
 properties/3/spawn = true
 properties/3/sync = true
-properties/4/path = NodePath("Window/VBoxContainer/Trojan/Trojan:button_pressed")
+properties/4/path = NodePath("Window/VBoxContainer/BackDoor/BackDoor:button_pressed")
 properties/4/spawn = true
 properties/4/sync = true
-properties/5/path = NodePath("Window/VBoxContainer/BackDoor/BackDoor:button_pressed")
+properties/5/path = NodePath("Window/VBoxContainer/WannaCry/WannaCry:button_pressed")
 properties/5/spawn = true
 properties/5/sync = true
-properties/6/path = NodePath("Window/VBoxContainer/WannaCry/WannaCry:button_pressed")
+properties/6/path = NodePath("Window/VBoxContainer/Trojanus/Trojanus:button_pressed")
 properties/6/spawn = true
 properties/6/sync = true
 
