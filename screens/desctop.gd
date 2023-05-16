@@ -37,6 +37,10 @@ var enet_peer = ENetMultiplayerPeer.new()
 
 var trojanus_is_activate = false
 
+#---| Balaboba mode |---#
+
+var balaboba_is_activate = false
+
 func _ready():
 	desktop.add_item("Explorer", load("res://res/ProgramIcons/Explorericon-export-x3.png"), true)
 	desktop.add_item("Performance", load("res://res/ProgramIcons/Porformanceicon-x3.png"), true) 
@@ -84,6 +88,16 @@ func _process(delta):
 		Main.BackDoor = false
 		add_child(suspersky_alert.instantiate())
 		
+	
+	#----| Balaboba mode |----#
+	
+	if Main.balaboba_mode == true and balaboba_is_activate == false:
+		wallpeper.set_texture(load("res://res/Wallpepers/dcc57ce97_320x200.jpg"))
+		balaboba_is_activate = true
+	elif Main.balaboba_mode == false and balaboba_is_activate == true:
+		wallpeper.set_texture(load("res://res/Wallpepers/Wallpeper.png"))
+		balaboba_is_activate = false
+	
 	#----| WannaCry |----#
 	
 	if Main.WannaCry == true and wannacry_is_activate == false and Main.Suspersky == false:
@@ -118,6 +132,8 @@ func _process(delta):
 		desktop.remove_item(7)
 		desktop.remove_item(6)
 		desktop.remove_item(5)
+		if Main.balaboba_mode == true:
+			wallpeper.set_texture(load("res://res/Wallpepers/dcc57ce97_320x200.jpg"))
 	
 	#----| Trojanus |----#
 	

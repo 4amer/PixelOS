@@ -21,6 +21,12 @@ func _on_line_edit_text_submitted(new_text):
 	elif new_text == "ispantschi":
 		audio.play()
 		$Label.text = $Label.text + "\n" + "ispantschi"
+	elif new_text == "balaboba mode true":
+		Main.balaboba_mode = true
+		$Label.text = $Label.text + "\n" + "balaboba mode is true"
+	elif new_text == "balaboba mode false":
+		Main.balaboba_mode = false
+		$Label.text = $Label.text + "\n" + "balaboba mode is false"
 	else:
 		$Label.text = $Label.text + "\n" + "Command '" + new_text + "' is not found"
 

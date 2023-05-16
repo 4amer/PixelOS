@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://3johgxhqu2xj"]
+[gd_scene load_steps=4 format=3 uid="uid://3johgxhqu2xj"]
 
 [ext_resource type="Script" path="res://screens/Settings.gd" id="1_xfgys"]
+[ext_resource type="AudioStream" uid="uid://de6dxceu5nmlp" path="res://screens/programms/CommandLineRofls/puk-v-ekho.mp3" id="2_ssltj"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_n5jf5"]
 properties/0/path = NodePath("Window:visible")
@@ -176,6 +177,9 @@ text = "Trojan"
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_n5jf5")
+
+[node name="puk-v-ekho" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ssltj")
 
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
 [connection signal="toggled" from="Window/VBoxContainer/Miner/Miner" to="." method="_on_miner_toggled"]
